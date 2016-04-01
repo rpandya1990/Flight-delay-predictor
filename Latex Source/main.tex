@@ -1,0 +1,146 @@
+\documentclass[10pt,conference]{IEEEtran}
+
+\ifCLASSINFOpdf
+	\usepackage[pdftex]{graphicx}
+	%\graphicspath{{./figs/}}
+	\DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+	\usepackage[dvips]{graphicx}
+	%\graphicspath{{./figs/}}
+	\DeclareGraphicsExtensions{.eps}
+\fi
+
+\usepackage{url}
+\usepackage[cmex10]{amsmath}
+\usepackage[tight,footnotesize]{subfigure}
+\usepackage{xcolor}
+\usepackage[lined,ruled]{algorithm2e}
+\usepackage{amsmath}
+
+\usepackage[latin1]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\usetikzlibrary{arrows}
+
+\usepackage[]{algorithm2e}
+\usepackage{graphicx}
+\newtheorem{property}{Property}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{question}{Question}
+\newtheorem{definition}{Definition}
+\newtheorem{corollary}{Corollary}
+
+\makeatletter
+\pgfdeclareshape{datastore}{
+\inheritsavedanchors[from=rectangle]
+\inheritanchorborder[from=rectangle]
+\inheritanchor[from=rectangle]{center}
+\inheritanchor[from=rectangle]{base}
+\inheritanchor[from=rectangle]{north}
+\inheritanchor[from=rectangle]{north east}
+\inheritanchor[from=rectangle]{east}
+\inheritanchor[from=rectangle]{south east}
+\inheritanchor[from=rectangle]{south}
+\inheritanchor[from=rectangle]{south west}
+\inheritanchor[from=rectangle]{west}
+\inheritanchor[from=rectangle]{north west}
+\backgroundpath{
+    %  store lower right in xa/ya and upper right in xb/yb
+\southwest \pgf@xa=\pgf@x \pgf@ya=\pgf@y
+\northeast \pgf@xb=\pgf@x \pgf@yb=\pgf@y
+\pgfpathmoveto{\pgfpoint{\pgf@xa}{\pgf@ya}}
+\pgfpathlineto{\pgfpoint{\pgf@xb}{\pgf@ya}}
+\pgfpathmoveto{\pgfpoint{\pgf@xa}{\pgf@yb}}
+\pgfpathlineto{\pgfpoint{\pgf@xb}{\pgf@yb}}
+ }
+}
+\makeatother
+
+\newcommand{\riham}[1]{{\color{red}{#1}}}
+\newcommand{\james}[1]{{\color{blue}{#1}}}
+\graphicspath{ {images/} }
+
+
+\begin{document}
+
+\title{Flight Delay Prediction Through Machine Learning}
+\author{
+\IEEEauthorblockN{Krishna Anantha Padmanabhan}
+\IEEEauthorblockA{Rutgers University\\ Piscataway, NJ, USA\\
+krishna.ananth@cs.rutgers.edu}
+\and
+\IEEEauthorblockN{Chintan Trivedi}
+\IEEEauthorblockA{Rutgers University\\
+ Piscataway, NJ, USA\\
+ chintan.trivedi@rutgers.edu}
+\and
+\IEEEauthorblockN{Raghav Pandya}
+\IEEEauthorblockA{Rutgers University\\
+Piscataway, NJ, USA\\
+raghav.pandya@rutgers.edu}
+}
+
+\maketitle
+\begin{abstract}
+\textnormal{
+This project explores the algorithmic approach behind a Prediction System. We study and compare multiple classification algorithms and use the most accurate classifier to predict the possible delay in any flight and Linear Regression to predict the duration of delay. To train this system, we use data collected from the United States Bureau of Transportation Statistics, a data set of various flight journeys.
+}
+\end{abstract}
+%\onecolumn \maketitle \normalsize \vfill
+
+\IEEEpeerreviewmaketitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Project Description}\label{sec:1. Project Description}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textnormal{
+Flight delay predictor system predicts whether the flights will be delayed for departure and then find out the duration of the delay for the flight. For this, we use popular algorithms and techniques from the area of Machine Learning to first learn from the given data and later make predictions from what we have learned. We  train our model for prediction using various attributes of a particular flight such as arrival performance, flight summaries, origin/destination etc. We make use of this model to predict if any future flight will be delayed or not which is to be displayed through a user interface. This system aids flight travelers and air Control staff to get an idea about future flights and if they will be delayed or not. The project is to be completed by three students within a time frame of 6 weeks. The project has four stages: Gathering, Design, Infrastructure Implementation, and User Interface. }
+
+%\subsection{Stage1 - The Requirement Gathering Stage. } \label{sec:1	Requirement Gathering Stage. } 
+%\input{Stage1.tex}
+\subsection{Stage1 - The Requirement Gathering Stage. }\label{sec:1 Requirement Gathering Stage. }
+%%%%%%%
+\input{Stage1.tex}
+
+\subsection{Stage2 - The Design Stage. }\label{sec: 2:The Design Stage.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Stage2.tex}
+
+\subsection{Stage3 - The Implementation Stage. }\label{sec: 3 The Implementation Stage.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Stage3.tex}
+
+\subsection{Stage4 -	User Interface. }\label{sec: 4. User Interface.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Stage4.tex}
+
+%\section{Project Highlights.}\label{sec:7. Project Highlights.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\input{Highlights.tex}
+
+\begin{thebibliography}{1}
+
+  \bibitem{kohavi1996scaling} R. Kohavi, 'Scaling Up the Accuracy of Naive-Bayes Classifiers: A Decision-Tree Hybrid',
+  CiteSeer, pp. 202--207, 1996.
+  
+  \bibitem{hall2007decision} M. Hall, 'A decision tree-based attribute weighting filter for naive Bayes',
+  Elsevier, vol. 20, no. 2, pp. 120--126, 2007.
+  
+  \bibitem{michalski2013machine} R. S. Michalski and J. G. Carbonell and T. M. Mitchell, 'Machine learning: An artificial intelligence approach', Springer Science \& Business Media, 2013.
+
+	\bibitem{rish2001empirical} I. Rish, 'IJCAI 2001 workshop on empirical methods in artificial intelligence', IBM New York, 
+  vol. 3, no. 22, pp. 41--46, 2001.
+  
+  \bibitem{mahmood2014analyzingnb} D. Y. Mahmood and M. A. Hussein, 'AnalyzingNB, DT and NBTree IntrusionDetection Algorithms', Journal of Zankoy Sulaimani-Part A (JZS-A), 
+  vol. 16, no. 1, pp. 1, 2014.
+    
+  \bibitem{bl}Transtats.bts.gov, 'RITA | BTS | Transtats', 2015. [Online]. Available: \url{http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time}. [Accessed: 01- Nov- 2015].
+  
+  \end{thebibliography}
+
+%\bibliographystyle{IEEEtran}
+%\bibliography{IEEEabrv,mainbib}
+%\bibliography{mainbib}
+
+\end{document}

@@ -1,0 +1,113 @@
+\begin{itemize} 
+\item{General Description: } 
+Our project includes working on the dataset of flights in the USA. We use about 66\% of this data for training multiple classifier algorithms to learn which factors given in our data influence the delay of a flight. We use WEKA data mining tool for this purpose. From that, we classify any flight into two classes, delayed or on-time. We select the classifier model with highest accuracy and use it for amking future predictions. Furthermore, to calculate how much a flight might get delayed, we use a regression model between the attributes of delayed flights as explanatory variables and the time of delay as response variables. The rest of the data is utilized as validation data to analyze the accuracy of this prediction system.    
+\item{There are three kinds of users for our prediction system: }
+
+\begin{enumerate}
+\item{Flight Traveler: End users who travel through flights.}
+\item{Airport Traffic Control staff: Users who have to manage flight schedules and delays.}
+\item{Researchers: Users who want to find out what kinds of flights get delayed so they can make scientific improvements.}
+\end{enumerate}
+
+\item{The user's interaction modes:
+All the users interact with the system through a User Interface developed in Java where they enter flight details to find out if its delayed. We then find if that particular flight belongs to the delayed class of flights or on-time class of flights. For the former case, we then calculate predicted delay in time of the flight.
+}
+
+\item{User-wise Scenario: }
+\begin{enumerate}
+\item{Flight Traveler}
+	\begin{itemize}
+    \item{Scenario 1 Description: }
+    A traveler wants to know if 'AA 2312' on Wednesday, November 1 2015, 9:30 am at Newark(EWR) will arrive late.
+    \item{Scenario 1 System Data Input: }
+    The flight details are taken as input.
+    \item{Scenario 1 Input Data Types: }
+    Flight details are airline 'AA' string, flight number '2312' integer, day 'Wednesday' string, date '11/01/2015', time '0930', airport 'EWR' string.
+    \item{Scenario 1 System Data Output: }
+    Details related to flight arrival delay are given.
+    \item{Scenario 1 Output Data Types: }
+    Probability of delay of flight and amount of delay in arrival.
+    
+    \item{Scenario 2 Description: }
+    A user wants to arrive at JFK by 10:30 am on Friday, November 13 2015. He has already booked the flight 'DL 666' and wants to know if it'll be delayed so he can catch his connecting flight at 12:00 pm.
+    \item{Scenario 2 System Data Input: }
+    The flight details are taken as input.
+    \item{Scenario 2 Input Data Types: }
+	Flight details are airline 'DL' string, flight number '666' integer, day 'Friday' string, date '11/13/2015', time '1030', airport 'JFK' string.
+    \item{Scenario 2 System Data Output: }
+    Details related to flight arrival delay are given.
+    \item{Scenario 1 Output Data Types: }
+    Probability of delay of flight and amount of delay in arrival.
+    
+
+
+	\end{itemize}
+
+\item{Air Traffic control staff}
+    \begin{itemize} 
+    
+   	\item{Scenario 1 Description: }
+    Air traffic controller wants to know arrival status of flight 'AI 202' arriving at 'Heathrow Airport' on date '12/11/2015' to alocate it an airstrip to land
+	\item{Scenario 1 System Data Input:}
+	Flight details are airline 'AI' string, flight number '202' integer, day 'Friday' string, date '11/13/2015', time '1030', airport 'LHR' string.
+	\item{Scenario 1 System Data Output: }
+    Delay in hours and minutes for the given flight
+   	\item{Scenario 2 Description: }
+    Air traffic controller wants to know arrival status of flight 'KU 303' arriving at 'Newark Liberty Airport' on '10/13/2015' to assign a conveyer belt for luggages for the arrival time
+	\item{Scenario 2 System Data Input: }
+    Flight details are airline 'KU' string, flight number '303' integer, date '11/13/2015', airport 'EWR' string.
+	\item{Scenario 2 System Data Output: }
+    Delay in hours and minutes for the given flight
+
+    \end{itemize}
+
+    
+
+    \item{Researchers:}
+\begin{itemize} 
+
+	\item{Scenario 1 Description: }
+    The researcher wants to know what percentage of flights of the airlines 'AA' are delayed.
+	\item{Scenario 1 System Data Input: }
+ The name of the airlines.    
+    \item{Scenario 1 Input Data Types: }
+    Airline name as 'AA' string.
+    \item{Scenario 1 System Data Output: }
+    The percentage of flights of the airline 'AA' that have faced delay issues.
+    \item{Scenario 1 Output Data Types: }
+    Percentage value in double of delay of flights of the airline 'AA'.
+    
+    \item{Scenario 2 Description: }
+    Researcher wants to know how many flights are delayed for any given airport, say 'JFK'.
+    \item{Scenario 2 System Data Input: }
+    The airport name is taken as input.
+    \item{Scenario 2 Input Data Types: }
+	Airport name 'JFK' in string format.
+    \item{Scenario 2 System Data Output: }
+    The percentage of flights on the airport 'JFK' that have faced delay issues.
+    \item{Scenario 1 Output Data Types: }
+    Percentage value in double of delay of flights on the airport 'JFK'.
+    
+    \end{itemize}
+\end{enumerate}    
+
+\item{Project Time line and Division of Labor.}
+There are three main components in the project:
+\begin{itemize} 
+
+\item{Development of Naive Bayes Tree Classifier on WEKA}
+\item{Training the classifier with the dataset and creation of a prediction model with linear regression that will be used while creating a user interface in JAVA}
+\item{Testing the implementation with different user levels to establish its stability and maintainability}
+\end{itemize}
+
+Each team member will be responsible for one of the components but will be assisted by other team members when needed. Each member will therefore be responsible for design, development, testing and documentation respectively. Krishna would work on generating classifier models and comparing them and store the best classifier model on the disk. Chintan would work on creating the Regression model and storing it on disk and the user interface. Raghav would work on data curation, implementation, analysis and testing at different user levels. The estimated time to complete the project would be around 6 weeks.
+
+\begin{itemize} 
+	\item{Week 1: We expect to curate the dataset by the end of the first week. At this stage we will work on identifying the necessary and relevant features that will be required for our application since the BTS dataset contains a lot of irrelevant data. This data curation will be done using python scripts.}
+    \item{Week 2: After the dataset is curated, we expect to complete the development of Naive Bayes Tree classifier as a plugin for WEKA by the end of week 2.}
+    \item{Week 3: We expect to train the classifiers with our dataset and develop the linear regression prediction model for it. At the same time we will develop a user interface in JAVA for our model.}
+    \item{Week 4: We would look at how different user levels can work seamlessly with the application. Its tractability will be the main concern at this stage.}
+    \item{Week 5: In this week, testing will be done and we will make the application stable.}
+    \item{Week 6: Once the application is stable and maintainable, we expect to complete the project with relevant results and work on the documentation, such as project report and presentation.}
+    \end{itemize}
+\end{itemize}
